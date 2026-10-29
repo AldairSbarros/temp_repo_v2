@@ -1,0 +1,138 @@
+# ═══════════════════════════════════════════════════════════════════════
+# AletheIA v1.1 — .gitignore
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── Python ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+*.so
+
+# dist/ (frontend/dist e builds de pacote) — global proposital
+dist/
+
+# ── Node (qualquer nível, inclusive worktrees) ──────────────────
+node_modules/
+.vite/
+
+# ── Ambiente / segredos ──────────────────────────────────────────
+.env
+.env.*
+!.env.example
+secrets.txt
+
+# ── Logs ─────────────────────────────────────────────────────────
+logs/
+*.log
+*.jsonl
+
+# ── Kilo ─────────────────────────────────────────────────────────
+# Worktrees do Agent Manager são checkouts completos do repo.
+# O .git/.gitignore interno deles já cobre o resto.
+.kilo/worktrees/
+
+# ── OS ──────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── LibreOffice lock files ───────────────────────────────────────
+.~lock.*
+
+# ── Uploads / temporários / runtime ─────────────────────────────
+uploads/
+imagens/
+tmp/
+backend/_ingest_tmp/
+backend/app/data/
+*.tmp
+
+# ── Bancos de dados ─────────────────────────────────────────────
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# ── Binários grandes / gerados no build ─────────────────────────
+*.deb
+*.deb.*
+*.AppImage
+instaladores/
+*.onnx
+*.mmdb
+*.safetensors
+*.wav
+
+# ── Cópias antigas e backups (o git já é o histórico) ───────────
+backup_versoes_anteriores/
+Old/
+*_old.py
+docs/BACKUP_*/
+backups/
+
+# ── Qdrant — banco vetorial + estado interno (NÃO versionar) ─────
+qdrant_data/
+qdrant_storage/
+
+# ── Saídas geradas pelo sistema ──────────────────────────────────
+producao/
+historicos_chat/
+bible.json
+_refs_final.txt
+_secao_final.txt
+
+# ── Arquivos temporários de debug/teste (não versionar) ───────────
+*.json
+!package.json
+!package-lock.json
+!pnpm-lock.yaml
+!*.code-workspace
+!*.json.example
+*.png
+*_diag_*.py
+check_*.py
+get_*.py
+list_*.py
+instance_config.json
+qr*.json
+qrcode*.png
+response_*.json
+webhook_*.json
+workflow_*.json
+
+# ── Sub-repositório embutido ────────────────────────────────────
+AletheIA/
+AletheIA_codigo/
+
+# ── Dados de licenças (e-mails/chaves de usuários — runtime) ────
+licencas_aletheia.json
+
+# ── Dados runtime de WhatsApp/Telegram (grupos, agenda, PII) ────
+whatsapp_grupos.json
+whatsapp_agenda.json
+whatsapp_instancias.json
+telegram_grupos.json
+telegram_agenda.json
+telegram_claims.json
+leads_whatsapp.json
+limites_ip.json
+devocional_historico.json
+newsletter_assinantes.json
+stripe_produtos.json
+
+# ── Evolution API — sessões do WhatsApp e Postgres (sensível) ────
+evolution_data/
+# Pastas de ambiente e temporários do projeto
+media/
+video_poc/
+venv-video-clean/
+J?Aletheia_v1.1/
